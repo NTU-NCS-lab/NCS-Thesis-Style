@@ -42,6 +42,27 @@
    \bibclosebracket
   }
 
+  
+\DeclareCiteCommand{\autocite}%
+  {\usebibmacro{cite:init}%
+   \color{red}
+   \bibopenbracket
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}%
+   \usebibmacro{postnote}%
+   \printtext[bibhyperref]{%
+   \printtext{:}
+   \ifnameundef{labelname}
+        {}
+        {\printnames{labelname}}
+   \printfield{year}%
+  }%
+  \bibclosebracket
+}
+
 \DeclareCiteCommand{\supercite}[\mkbibsuperscript]
   {\usebibmacro{cite:init}%
    \bibopenbracket
